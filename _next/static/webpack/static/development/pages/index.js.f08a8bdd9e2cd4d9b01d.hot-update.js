@@ -1,0 +1,68 @@
+webpackHotUpdate("static/development/pages/index.js",{
+
+/***/ "./components/three/index.tsx":
+/*!************************************!*\
+  !*** ./components/three/index.tsx ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! three */ "./node_modules/three/build/three.module.js");
+var _jsxFileName = "/Users/ksedline/playground/next-portfolio/components/three/index.tsx";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+var ThreeComponent = function ThreeComponent() {
+  var camera = new three__WEBPACK_IMPORTED_MODULE_1__["PerspectiveCamera"](70, 300 / 300, 0.01, 10);
+  var scene = new three__WEBPACK_IMPORTED_MODULE_1__["Scene"]();
+  var geometry = new three__WEBPACK_IMPORTED_MODULE_1__["BoxGeometry"](0.3, 0.3, 0.3);
+  var material = new three__WEBPACK_IMPORTED_MODULE_1__["MeshNormalMaterial"]();
+  var mesh = new three__WEBPACK_IMPORTED_MODULE_1__["Mesh"](geometry, material);
+  var renderer = new three__WEBPACK_IMPORTED_MODULE_1__["WebGLRenderer"]({
+    antialias: true,
+    alpha: true
+  });
+  camera.position.z = 1;
+  scene.add(mesh);
+
+  var init = function init() {
+    renderer.setSize(300, 300);
+    document.querySelector('#threed').appendChild(renderer.domElement);
+  };
+
+  var animate = function animate() {
+    requestAnimationFrame(animate);
+    mesh.rotation.x += 0.01;
+    mesh.rotation.y += 0.03;
+    renderer.render(scene, camera);
+  };
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    setTimeout(function () {
+      init();
+      animate();
+    }, 100);
+    return function () {};
+  }, []);
+  return __jsx("div", {
+    id: "threed",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41
+    },
+    __self: this
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ThreeComponent);
+
+/***/ })
+
+})
+//# sourceMappingURL=index.js.f08a8bdd9e2cd4d9b01d.hot-update.js.map
